@@ -14,21 +14,21 @@ The goal of this project was to:
 
 The original dataset can be found in: /data/hotel_data/hotel_data_original.csv
 
-//1.png
+![1](img/1.png)
 
 Preprocessed data can be found in: /data/hotel_data/hotel_data_preprocessed.csv
 
-//2.png
+![2](img/2.png)
 
 Then the least important columns (e.g. email) are deleted and data is stored  in : /data/hotel_data/hotel_data_interactions_df.csv
 
-//3.png
+![3](img/3.png)
 
 ## User and item features
 
-User features are created by calculating the probability distribution of its values among all user's reservations. Data is split into one-hot encoding using pd.get_dummies() function. Then data is grouped by user_id, then summed and finally normalized so that sum of features in every row is equal to 1. Item features are created in the same way.
+User features are created by calculating the probability distribution of its values among all user's reservations. Data is split into one-hot encoding using pd.get_dummies() function. Later, data is grouped by user_id, then summed and finally normalized so that sum of features in every row is equal to 1. Item features are created in the same way.
 
-//4.png
+![4](img/4.png)
 
 I've also created user and item features using only one-hot encoding or calculating mean values for every column, but I was unsatisfied with the results.
 
@@ -40,13 +40,13 @@ In fit method five random negative interactions are generated for one positive i
 
 In recommend method the Carthesian product of users from users_df and items from items_df is created. Then recommendations are generated using predict() or make_decision() function. Finally recommendations are sorted by score and returned.
 
-//5.png
+![5](img/5.png)
 
 ## Tune models
 
-Several models were tuned using Hyperopt. It turned out that the best model for my recommender was LogisticRegression. Although the @HR10 is not as good as AmazonRecommender, it is still quite good score.
+Several models were tuned using Hyperopt. It turned out that the best model for my recommender was LogisticRegression. Although the @HR10 is not as good as AmazonRecommender, it is still quite a good score.
 
-//6.png
+![6](img/6.png)
 
 ## Preparing your computer
 
