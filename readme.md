@@ -70,7 +70,7 @@ Several models were tuned using Hyperopt. It turned out that the best model for 
 
 3. In Git Bash open the repository folder and activate just created environment with the following command:
 
-		conda activate rs-class-env
+		conda activate recommender
 
 4. You may need to type:
 
