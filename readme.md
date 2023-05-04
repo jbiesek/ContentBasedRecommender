@@ -20,13 +20,13 @@ Preprocessed data can be found in: /data/hotel_data/hotel_data_preprocessed.csv
 
 ![2](img/2.png)
 
-Then the least important columns (e.g. email) are deleted and data is stored  in : /data/hotel_data/hotel_data_interactions_df.csv
+Then the least important columns (e.g. email) are deleted and the data is stored in : /data/hotel_data/hotel_data_interactions_df.csv
 
 ![3](img/3.png)
 
 ## User and item features
 
-User features are created by calculating the probability distribution of its values among all user's reservations. Data is split into one-hot encoding using pd.get_dummies() function. Later, data is grouped by user_id, then summed and finally normalized so that sum of features in every row is equal to 1. Item features are created in the same way.
+User features are created by calculating the probability distribution of its values across all user's reservations. Data is split into one-hot encoding using pd.get_dummies() function. Later, data is grouped by user_id, then summed and finally normalized so that the sum of features in every row is equal to 1. Item features are created in the same way.
 
 ![4](img/4.png)
 
@@ -34,11 +34,11 @@ I've also created user and item features using only one-hot encoding or calculat
 
 ## Fit method
 
-In fit method five random negative interactions are generated for one positive interaction from dataset. Then negative interactions are merged with positive interactions and fitted into model. The whole process takes only about 8 seconds.
+The fit method generates five random negative interactions for one positive interaction from dataset. The negative interactions are then merged with the positive interactions and fitted to the model. The whole process takes only about 8 seconds.
 
 ## Recommend method
 
-In recommend method the Carthesian product of users from users_df and items from items_df is created. Then recommendations are generated using predict() or make_decision() function. Finally recommendations are sorted by score and returned.
+In the recommend method, the carthesian product of users from users_df and items from items_df is created. Then recommendations are generated using predict() or make_decision() function. Finally, the recommendations are sorted by score and returned.
 
 ![5](img/5.png)
 
